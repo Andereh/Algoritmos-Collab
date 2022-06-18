@@ -1,5 +1,6 @@
 suma = 0
 
+print("Programa para promediar una cantidad indeterminada de numeros\n")
 n_elementos = int(input("Cuantos elementos quiere evaluar?: "))
 
 while n_elementos < 1:
