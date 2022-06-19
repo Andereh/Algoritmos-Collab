@@ -1,7 +1,6 @@
 //calculo del promedio de cinco numeros
 
 #include <iostream>
-#include <math.h>
 
 using namespace std;
 
