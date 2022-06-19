@@ -7,7 +7,8 @@ using namespace std;
 
 int main(){
 
-     float n1, n2, n3, n4, n5, promedio = 0;
+     float n1, n2, n3, n4, n5;
+	float promedio = 0; // el promedio final debe ser float por la division que haras
      cout<<"Este programa es para calcular el promedio de 5 numeros";
      cout<<"\ningrese el primer numero : "; cin>>n1;
      
@@ -47,7 +48,12 @@ int main(){
 	
        }
            
-       promedio = n1 + n2 + n3 + n4 + n5 / 5;
+       promedio = (n1 + n2 + n3 + n4 + n5) / 5;
+
+	   /*
+		* Si no pones los parentesis se ejecutara primero la division, eso
+		* te dara resultados erroneos
+		*/
        
        cout<<"\nTu promedio es: "<<promedio;
        
