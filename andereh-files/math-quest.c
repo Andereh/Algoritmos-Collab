@@ -22,7 +22,7 @@ int main()
         while (tabla_selecc < 1 || tabla_selecc > 20)
         {
             //fflush(stdio); // para windows
-            __fpurge(stdin); 
+            __fpurge(stdin); // para linux
 
             printf("\nSolo numeros entre 1 y 20\nPrueba con otro: ");
             scanf("\n%d", &tabla_selecc);
