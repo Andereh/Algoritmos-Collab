@@ -26,3 +26,4 @@ int main(int argc, char *argv[])
 }
 
 // @Kaldus, tal vez este te guste mas
+// esta bien pero y la presentacion? a? a?
