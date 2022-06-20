@@ -4,8 +4,9 @@
  
  int num;
  int main(){
- 		cout<<"Hola, estre programa fue hecho para mostrarte las tablas de multiplicar ";
- 		cout<<"\n\nIngresa el numero el cual quieres ver su tabla: "; cin>>num;
+	 
+ 	cout<<"Hola, estre programa fue hecho para mostrarte las tablas de multiplicar ";
+ 	cout<<"\n\nIngresa el numero el cual quieres ver su tabla: "; cin>>num;
  		
 	     while (num<1){
 	     cout<<"Lo siento, solo evaluo numeros positivos, intenta otro: "; cin>>num;
