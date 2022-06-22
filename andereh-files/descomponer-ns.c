@@ -1,7 +1,7 @@
 #include <stdio.h>
 #include <math.h>
 
-int n, res;
+int n, res, k;
 
 int main() {
 	printf("Programa que te ayuda a descomponer numeros\n");
@@ -13,10 +13,17 @@ int main() {
 		scanf("%d", &n);
 	}
 
-	for (int i = 0; n > 0; i++) {
-		res = n%10 * pow(10, i);  
+	// for (int i = 0; n > 0; i++) {
+	// 	res = n%10 * pow(10, i);  
+	// 	printf("%d\n", res);
+	// 	n /= 10;
+	// }
+	k = 1;
+	while (n > 0) {
+		res = n%10 * k;
 		printf("%d\n", res);
 		n /= 10;
+		k *= 10;
 	}
 
 	return 0;
