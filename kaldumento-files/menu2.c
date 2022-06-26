@@ -12,17 +12,17 @@ int main (void){
 		printf("1. Suma\n");
 		printf("2. Restar\n");
 		printf("3. Salir\n\n");
-		printf("¿Que opcion prefieres?: ");
+		printf("Â¿Que opcion prefieres?: ");
 		scanf("%d", &opcion);
 		switch(opcion){
 			
 			case 1:
 				system("cls");
 				printf("Ingresa dos numeros para ejecutar la operacion\n\n");
-	        	printf("Primer Numero: ");
-	         	scanf("%d",&num1);
-	         	printf("Segundo Numero: ");
-	        	scanf("%d",&num2);
+	        	        printf("Primer Numero: ");
+	         	        scanf("%d",&num1);
+	         	        printf("Segundo Numero: ");
+	        	        scanf("%d",&num2);
 				printf("La suma de %d + %d es: %d",num1,num2,num1+num2);
 				getch();
 				break;
@@ -30,10 +30,10 @@ int main (void){
 			case 2:
 				system("cls");
 				printf("Ingresa dos numeros para ejecutar la operacion\n\n");
-		        printf("Primer Numero: ");
-		        scanf("%d",&num1);
-		        printf("Segundo Numero: ");
-	        	scanf("%d",&num2);
+		                printf("Primer Numero: ");
+		                scanf("%d",&num1);
+		                printf("Segundo Numero: ");
+	        	        scanf("%d",&num2);
 				printf("La resta de %d - %d es: %d",num1,num2,num1-num2);
 				getch();
 				break;
