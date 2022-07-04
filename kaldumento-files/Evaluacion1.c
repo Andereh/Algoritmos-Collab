@@ -1,3 +1,5 @@
+//SI EMPIEZAS CON LA MARIKERA DE LOS TABS TE VOY A CAER A COÑAZO YA BASTANTE TUVE CON ESTA MIERDA
+
 #include <stdio.h>
 #include <stdlib.h>
 #include <conio.h>
@@ -16,7 +18,7 @@ int main (void){
 		printf("3. Calcula cuanto ganas al mes :3\n\n");
 		printf("4. Aqui te muestro los numeros del 1 al 30 pero de atras pa lante\n\n");
 		printf("5. Salir\n\n");
-		printf("�Que opcion prefieres?: ");
+		printf("¿Que opcion prefieres?: ");
 		scanf("%d", &opcion);
 		switch(opcion){
 			
