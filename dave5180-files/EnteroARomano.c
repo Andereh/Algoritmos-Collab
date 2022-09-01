@@ -1,4 +1,4 @@
-//ramon
+//Enteros a romanos
 #include <stdio.h>
 #include <string.h>
 #include <unistd.h>
