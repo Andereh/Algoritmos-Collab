@@ -1,6 +1,6 @@
 #include <math.h>
 #include <stdio.h>
-int vc, vc1, vc2, vc3; // Variables de Control
+int vc, vc1, opcion, vc3; // Variables de Control
 
 void clasificarTrian();
 void calcularPoten();
@@ -14,21 +14,27 @@ int main() {
 
     while (vc1 == 1) {
       vc3 = 1;
-      printf("Calculador multiple\n");
-      printf("Opcion 1. determinador de triangulos\n");
-      printf("Opcion 2. Calculador de potencias\n");
-      printf("Opcion 3. Descomponedor de numeros\n");
-      printf("Opcion 4. Salir\n");
-      scanf("%d", &vc2);
-      if (vc2 == 4)
+      printf("Calculador multiple\n\n");
+      printf("\t1. determinador de triangulos\n");
+      printf("\t2. Calculador de potencias\n");
+      printf("\t3. Descomponedor de numeros\n");
+      printf("\t4. Salir\n");
+
+      printf("\n\t\033[32mTu opcion:\033[0m ");
+      scanf("%d", &opcion);
+
+      if (opcion == 4)
+      {
+        printf("Pero porque te sales mmgvo >:(\n");
         return 0;
-      if (vc2 < 1 || vc2 > 4)
+      }
+      if (opcion < 1 || opcion > 4)
         printf("Por favor introduzca una opcion valida\n");
       else
         vc1 = 0;
     }
 
-    switch (vc2) {
+    switch (opcion) {
     case 1:
       clasificarTrian();
       break;
@@ -52,11 +58,11 @@ void clasificarTrian() {
   int l1, l2, l3, lm; // Lados del triangulo
 
   do {
-    printf("Ingrese el valor de el primer lado: ");
+    printf("\n\nIngrese el valor del lado 1: ");
     scanf("%d", &l1);
-    printf("\nIngrese el valor de el segundo lado: ");
+    printf("Ingrese el valor del lado 2: ");
     scanf("%d", &l2);
-    printf("\nIngrese el valor de el tercer lado: ");
+    printf("Ingrese el valor del lado 3: ");
     scanf("%d", &l3);
 
     lm = l1;
@@ -75,7 +81,8 @@ void clasificarTrian() {
     else
       printf("El triangulo es escaleno\n");
 
-    printf("Desea calcular otro triangulo?:\nSi = 1\nNo = 0\n");
+    printf("\nDesea calcular otro triangulo?:\n\tSi = \033[32m1\033[0m\n\tNo = \033[31m0\033[0m\n");
+    printf("\n\nOpcion: ");
     scanf("%d", &vc3);
   } while (vc3 == 1);
 }
