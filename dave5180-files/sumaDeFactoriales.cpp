@@ -20,7 +20,7 @@ int main(){
     sumaFactoriales += factorial;
     factorial = 1;
 
-    }
+    } // estas loco hijo de perra
 
     cout<<"\nLa suma total de los factoriales son: "<<sumaFactoriales;
     getch();

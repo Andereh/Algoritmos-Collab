@@ -25,6 +25,17 @@ int mariquillo(int r1, int r2){
 return 0;
 }
 
+// epa vale, no me entendiste. Aqui solo las definiste
+// Yo me referia a que no podias definir una funcion dentro de otra funcion Ej.
+//
+// int prueba()
+// {
+//     string otraPrueba()
+//     {
+//         printf("Algo");
+//     }
+// }
+
 int main(){
     printf("Comparador de la suma de dos conjuntos\n");
     r1 = ricolino();
