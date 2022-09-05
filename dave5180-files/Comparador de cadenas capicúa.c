@@ -3,6 +3,7 @@
 
 char cadena[100]; control [100];
 
+int main(){
 printf("Inserte la cadena a comparar: "); gets(cadena);
 	int i;
 	int x = strlen(cadena);
@@ -21,3 +22,4 @@ printf("Inserte la cadena a comparar: "); gets(cadena);
   
 	printf("\n\nIngrese una tecla para continuar ");
 	gets(control);
+}
