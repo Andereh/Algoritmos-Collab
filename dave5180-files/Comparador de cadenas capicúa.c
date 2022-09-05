@@ -1,7 +1,7 @@
 #include <stdio.h>
 #include <string.h>
 
-char cadena[100]; control [100];
+char cadena[100], control [100];
 
 int main(){
 printf("Inserte la cadena a comparar: "); gets(cadena);
@@ -13,8 +13,8 @@ printf("Inserte la cadena a comparar: "); gets(cadena);
 		capicua[i] = cadena[j];
 			j--;
 		}
-	cadena[x-1] = 0;
-	capicua[x-1] = 0;
+	cadena[x] = 0;
+	capicua[x] = 0;
   
 	printf("\n\nLa cadena: %s\nSu reverso: %s", cadena, capicua);
 	if (strcmp(cadena, capicua) == 0) printf("\n\nLa cadena es capicua!!");
