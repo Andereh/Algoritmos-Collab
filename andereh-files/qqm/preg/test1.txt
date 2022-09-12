@@ -1,7 +1,14 @@
-&Cual es la capital de Vzla
+&La nectarina es:
 
-#Lima 
-#Valencia 
-#Caracas
-#Tucupido
-!c
+#Una enzima 
+#Un insecto 
+.Una fruta
+#Una hormona
+
+&El Rupenio es...
+
+#Una especie de arbusto
+.Un elemento quimico
+#Una arepa
+#Un pedazo e pan
+
