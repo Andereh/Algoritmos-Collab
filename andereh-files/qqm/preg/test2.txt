@@ -1,0 +1,104 @@
+&Cual es la moneda oficial de cuba?
+
+#El che in
+#El fidel
+.El peso cubano
+#El dolar
+
+&Un diario vespertino es aquel que sale...
+
+#Por la mañana 
+.por la tarde
+#semanalmente
+#mensualmente
+
+&Un Roll Royce es un tipo de...
+
+#Reloj
+.Auto
+#Avion
+#Motocicleta
+
+&Manual de la doctrina catolica redactado en forma de preguntas y respuestas
+
+#test
+.catecismo
+#biblia
+#examen
+
+&En Puerto rico se habla...
+
+#Patua
+#Arabe
+#Boricua
+.Espanol
+
+&Como se conoce popurlamente el herpes zoster?
+
+#Mal de ojo
+#Lombriz solitaria
+.Culebrilla
+#Piorrea
+
+&En que pais nacio el futbolista Gonzalo Higuain?
+
+#Argentina
+.Francia
+#Italia
+#Espana
+
+&Cual de los siguientes artistas es mas joven que Justin Bieber?
+
+.Dua lipa
+#Jason Derulo
+#Megan Trainor
+#Ed Sheeran
+
+&En que pais se encuentra el sitio turistico conocido como la "Calzada de los gigantes"?
+
+#Irlanda del sur
+#Inglaterra
+#Esocia
+.Irlanda del norte
+
+&Segun las doce casas astrologicas, que signo del zodiaco corrsponde a la casa 9
+
+#Escorpio
+.Sagitario
+#Tauro
+#Capricornio
+  
+&Que colores dan titulo a una novela de Stendhal, de 1830?
+
+#Blanco y Negro
+.Rojo y Negro
+#Azul y Blanco
+#Blanco y Rojo
+
+&En Total, Cuantos son los carriles para vehiculos pesados tiene la obra de la ciudad de Buenos Aires llamada de Paseo del Bajo?
+
+#0 Carriles
+#4 Carriles
+#6 Carriles
+#8 Carriles
+
+&Que deportista convirtio el gol mas rapido de un mundial de futbol?
+
+#Bryan Robson, de Inglaterra
+#Celsa Ayala, de Paraguay
+.Hakan Sukur, de Turquia
+#Bernard Lacombe, Francia
+
+&En que anio se emitio por primera vez, en Holanda, el reality "Gran Hermano"?
+
+#En 1995
+#En 1996
+.En 1999
+#En 2000
+
+&"Black..." que, se titula la serie de television britanica?
+
+#Window
+.Mirror
+#Panic
+#Arrow
