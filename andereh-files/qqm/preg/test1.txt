@@ -1,0 +1,7 @@
+&Cual es la capital de Vzla
+
+#Lima 
+#Valencia 
+#Caracas
+#Tucupido
+!c
