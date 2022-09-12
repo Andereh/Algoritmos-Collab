@@ -1,14 +1,64 @@
-&La nectarina es:
+&Segun el refran. Quien es el que la paga?
 
-#Una enzima 
-#Un insecto 
-.Una fruta
-#Una hormona
+#El que nace barrigon
+.El que la hace
+#El que se resbala
+#El que anda peliando
 
-&El Rupenio es...
 
-#Una especie de arbusto
-.Un elemento quimico
-#Una arepa
-#Un pedazo e pan
+&Uno de estos deportes tambien es conocido como "balompie"
 
+.El futbol
+#Criquet
+#Polo
+#Rugby
+
+&Que lleva puesto en la cabeza la Hormiga Atomica?
+
+#Un sombrero de copa
+#Un afro
+#Una gorra del magallanes
+.Un casco blanco
+
+&Asi dice una cancion de Simon Diaz: "Alla en mi pueblo cuando pasa un alcaravan se asustan las muchachas por..."
+
+#La rumba de anoche
+#El novio escondido
+.El beso en el morichal
+#El grito de la suegra
+
+&George Clooney es el protagonista de "Amor sin..."
+
+#Trabajo
+#Hambre
+.Escalas
+#Dinero
+
+
+&Si la forma de un objeto es parecida a la de una lenteja. Que palabra usariamos para describirlo?
+
+.Lenticular
+#Lentiscal
+#Leotardo
+#Lenitivo
+
+&"Ese hombre si camina" fue un lema usado para la campania presidencial de...
+
+#Rafael Caldera
+.Carlos Andres Perez
+#Luis Pinerua Ordaz
+#Luis Herrera Campins
+
+&Cual de estos rios desemboca en el Orinoco
+
+#Tocuyo
+.Cuchivero
+#Chama
+#Neveri
+
+&El punto donde se cortan las tres medianas de un triangulo se llama:
+
+.Baricentro
+#Bisectriz
+#Circuncentro
+#Diametro
