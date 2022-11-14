@@ -15,7 +15,7 @@ struct student
 {
 		
 	char name[100];
-	int yearOld;
+	int yearsOld;
 	float promedio;
 
 }students[3];
@@ -40,7 +40,7 @@ int main()
 		cout << "\n\n\t Nombre del alumno "<< i+1 << ": ";
 		cin.getline(students[i].name,100,'\n');
 		cout << "\n\t Edad del alumno " << i+1 << ": ";
-		cin >> students[i].yearOld;
+		cin >> students[i].yearsOld;
 		
 
 		do{

@@ -8,7 +8,8 @@
 
 #include <iostream>
 #include <stdlib.h>
-#include <windows.h>
+
+//#include <windows.h>
 
 using namespace std;
 
@@ -26,9 +27,9 @@ int main()
 
 {	
 
-	HANDLE hConsole = GetStdHandle(STD_OUTPUT_HANDLE);
+	//HANDLE hConsole = GetStdHandle(STD_OUTPUT_HANDLE);
 
-	int mayor = -1, menor = 102321339,posMayor,posMenor;
+	int mayor = -1, menor = INT32_MAX,posMayor,posMenor;
 	int nEmpleados; //Numero de empleados
 
 	cout << "\n\t\t\t\t Bienvenido \n\n";
@@ -49,10 +50,12 @@ int main()
 	{
 		cout << "\n\t Empleado " << i + 1 << ":\n";
 
-		fflush(stdin); //Resetear buffer
+		//fflush(stdin); //Resetear buffer
+		cin.ignore(1000, '\n');
 		cout << "\n\t\t Nombre: "; getline(cin,empleados[i].name);
 		cout << "\n\t\t Edad: "; cin >> empleados[i].edad;
-		fflush(stdin);
+		//fflush(stdin);
+		cin.ignore(1000, '\n');
 		cout << "\n\t\t Cargo: "; getline(cin,empleados[i].cargo);
 		cout << "\n\t\t Salario: "; cin >> empleados[i].salario;
 
@@ -78,10 +81,10 @@ int main()
 	cout << "\n\n\t Cargo: " << empleados[posMayor].cargo;
 
 	//Ponerle color al texto, unicomente en la linea de abajo
-	SetConsoleTextAttribute(hConsole, (FOREGROUND_GREEN | FOREGROUND_GREEN | FOREGROUND_RED));
+	//SetConsoleTextAttribute(hConsole, (FOREGROUND_GREEN | FOREGROUND_GREEN | FOREGROUND_RED));
 	cout << "\n\n\t Salario: " << empleados[posMayor].salario << "$";
 	//Devolver los colores a la normalidad
-	SetConsoleTextAttribute(hConsole, (FOREGROUND_RED | FOREGROUND_BLUE | FOREGROUND_GREEN));
+	//SetConsoleTextAttribute(hConsole, (FOREGROUND_RED | FOREGROUND_BLUE | FOREGROUND_GREEN));
 
 	cout << "\n\n Empleado con el salario mas bajo: ";
 
@@ -90,10 +93,10 @@ int main()
 	cout << "\n\n\t Cargo: " << empleados[posMenor].cargo;
 
 	//Ponerle color al texto, unicomente en la linea de abajo
-	SetConsoleTextAttribute(hConsole, (FOREGROUND_RED | FOREGROUND_RED | FOREGROUND_RED));
+	//SetConsoleTextAttribute(hConsole, (FOREGROUND_RED | FOREGROUND_RED | FOREGROUND_RED));
 	cout << "\n\n\t Salario: " << empleados[posMenor].salario << "$";
 	//Devolver los colores a la normalidad
-	SetConsoleTextAttribute(hConsole, (FOREGROUND_RED | FOREGROUND_BLUE | FOREGROUND_GREEN));
+	//SetConsoleTextAttribute(hConsole, (FOREGROUND_RED | FOREGROUND_BLUE | FOREGROUND_GREEN));
 
 
 	cout<<endl<<endl;
