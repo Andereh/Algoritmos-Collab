@@ -1,0 +1,69 @@
+/*
+Hacer una estructura llamada corredor en la cual se tendran los siguientes
+campos: Nnombre,edad,sexo,club. Pedir datos al usuario para un solo corredor y
+asignarle una categoria: Juvenil <= 18 años Señor  <= 40 anos Veterano > 40 anos
+
+Posteriormente mostrar los datos en pantalla
+*/
+
+#include <stdlib.h>
+#include <string.h>
+#include <iostream>
+
+using namespace std;
+
+struct corredor {
+    char nombre[100];
+    int edad;
+    char sexo[15];
+    char club[100];
+    string categoria;
+
+} corredor;
+
+int main() {
+    cout << "\n\t\t\t\t Bienvenido \n\n\n\n";
+    cout << "\t A continuacion se le pediran datos de un corredor.\n\n\t "
+            "Ingreselos correctamente\n\n";
+
+    cout << "\n\n Nombre: ";
+    cin.getline(corredor.nombre, 100, '\n');
+    cout << "\n Edad: ";
+    cin >> corredor.edad;
+    fflush(stdin);  // Resetear buffer
+    cout << "\n Sexo(m/f): ";
+    cin.getline(corredor.sexo, 15, '\n');
+
+    while (strcasecmp(corredor.sexo, "m") != 0 &&
+           strcasecmp(corredor.sexo, "f") != 0) {
+        cout << "Eh... que aqui no aceptamos sexos raros. Intenta de nuevo: ";
+        cin >> corredor.sexo;
+        fflush(stdin);  // Resetear buffer
+    }
+
+    cout << "\n Club al que pertenece: ";
+    cin.getline(corredor.club, 100, '\n');
+
+    cout << "\n\n";
+
+    // Determinar a que categoria pertenece el corredor
+    if (corredor.edad <= 18)
+        corredor.categoria = "Juvenil";
+    else if (corredor.edad <= 40)
+        corredor.categoria = "Senior";
+    else
+        corredor.categoria = "Veterano";
+
+    // Mostrar los datos del corredor
+
+    cout << "\n\n\n Corredor: " << corredor.nombre << endl;
+    printf("\n Edad: %d ", corredor.edad);
+    cout << "\n Sexo: " << corredor.sexo;
+    cout << "\n Club: " << corredor.club;
+    cout << "\n Categoria: " << corredor.categoria;
+
+    cout << "\n\n";
+    system("pause");
+
+    return 0;
+}
