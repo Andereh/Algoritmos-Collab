@@ -9,6 +9,12 @@
 #define bold "\033[1m"
 
 using namespace std;
+// time: 3:48"10'
+/* TODO:
+ * 1. Que las piezas no puedan salir por los bordes
+ * 2. Crear el sistema de promocion
+ *
+ * <19-11-22, Ronald> */
 
 string toLower(string str) {
     for (int i = 0; i < str.length(); i++) {
@@ -38,9 +44,10 @@ class Board {
         warnings = "";
 
         // this->initBoard("rnbqkbnr/pppppppp/8/8/8/8/PPPPPPPP/RNBQKBNR");
-        this->initBoard(
-            "b1b1b1b1b1/1b1b1b1b1b/b1b1b1b1b1/1b1b1b1b1b/-/-/r1r1r1r1r1/"
-            "1r1r1r1r1r/r1r1r1r1r1/1r1r1r1r1r");
+        // this->initBoard(
+        //"b1b1b1b1b1/1b1b1b1b1b/b1b1b1b1b1/1b1b1b1b1b/-/-/r1r1r1r1r1/"
+        //"1r1r1r1r1r/r1r1r1r1r1/1r1r1r1r1r");
+        this->initBoard("-/-/-/-/2b7/1r9/-/-/-/-");
     }
 
     void print() {
@@ -133,6 +140,11 @@ class Board {
 
                 positions[originPosition] = 0;
                 positions[destinationPosition] = 0;
+
+                if (enemyPlayer == 1)  // 1 = b
+                    numberOfWhitePieces--;
+                else
+                    numberOfRedPieces--;
             } else {
                 warnings =
                     "No puedes capturar. Hay una pieza hacia donde te quieres "
@@ -147,8 +159,8 @@ class Board {
     }
 
     int someoneWin() {
-        if (numberOfRedPieces = 0) return 1;
-        if (numberOfWhitePieces = 0) return -1;
+        if (numberOfRedPieces == 0) return -1;   // gana blancas
+        if (numberOfWhitePieces == 0) return 1;  // ganan rojas
 
         return 0;
     }
@@ -195,7 +207,8 @@ class Board {
 
                 if (this->getPieceCode(FENChar) == 2)
                     numberOfRedPieces++;
-                else numberOfWhitePieces++;
+                else
+                    numberOfWhitePieces++;
 
                 column++;
             }
@@ -223,6 +236,14 @@ int main(int argc, char *argv[]) {
         cls;
         board.print();
     } while (!board.someoneWin());
+
+    cout << '\n';
+
+    cls;
+    if (board.someoneWin() == 1) {
+        cout << "Ganaron las rojas nojodaaaaa";
+    } else
+        cout << "Ganaron las blancas nojodaaaaa";
 
     cout << '\n';
     return 0;
