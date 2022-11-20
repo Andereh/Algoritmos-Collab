@@ -51,8 +51,8 @@ class Board {
         pieces = {' ', 'P', 'B', 'N', 'R', 'Q', 'K',
                   'p', 'b', 'n', 'r', 'q', 'k'};
 
-        // this->initBoard("rnbqkbnr/pppppppp/8/8/8/8/PPPPPPPP/RNBQKBNR");
-        this->initBoard("8/5k2/3p4/1p1Pp2p/pP2Pp1P/P4P1K/8/8");
+        this->initBoard("rnbqkbnr/pppppppp/8/8/8/8/PPPPPPPP/RNBQKBNR");
+        // his->initBoard("8/5k2/3p4/1p1Pp2p/pP2Pp1P/P4P1K/8/8");
     }
 
     void print() {
