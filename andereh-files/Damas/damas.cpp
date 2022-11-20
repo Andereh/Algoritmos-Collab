@@ -25,50 +25,55 @@ string toLower(string str) {
 }
 
 class Board {
-   private:
     string warnings;
-    int playerMoving = 2;
-    int numberOfRedPieces = 0;
-    int numberOfWhitePieces = 0;
+    int playerMoving;
+    int numberOfRedPieces;
+    int numberOfWhitePieces;
     vector<int> positions;
     vector<char> pieces;
-    struct {
+
+    struct {  // this is for red pieces
         int lef = -9;
         int righ = -11;
     } directions;
 
    public:
     Board() {
-        positions = vector<int>(100);
-        pieces = {' ', 'b', 'r'};
         warnings = "";
+        playerMoving = 2;
+        numberOfRedPieces = 0;
+        numberOfWhitePieces = 0;
+        positions = vector<int>(100);
+        pieces = {' ', 'M', 'X'};
 
         // this->initBoard("rnbqkbnr/pppppppp/8/8/8/8/PPPPPPPP/RNBQKBNR");
-        // this->initBoard(
-        //"b1b1b1b1b1/1b1b1b1b1b/b1b1b1b1b1/1b1b1b1b1b/-/-/r1r1r1r1r1/"
-        //"1r1r1r1r1r/r1r1r1r1r1/1r1r1r1r1r");
-        this->initBoard("-/-/-/-/2b7/1r9/-/-/-/-");
+        this->initBoard(
+            "b1b1b1b1b1/1b1b1b1b1b/b1b1b1b1b1/1b1b1b1b1b/-/-/r1r1r1r1r1/"
+            "1r1r1r1r1r/r1r1r1r1r1/1r1r1r1r1r");
+        // this->initBoard("-/-/-/-/2b7/1r9/-/-/-/-");
     }
 
     void print() {
         for (int i = 0; i < 10; ++i) {
-            cout << "\033[1;90m    "
-                    "+---+---+---+---+---+---+---+---+---+---+\n\033[0m";
+            cout << black bold
+                "    "
+                "+---+---+---+---+---+---+---+---+---+---+\n" white;
 
-            cout << (10 - i != 10 ? "  " : " ") << 10 - i << "\033[1;90m";
+            cout << (10 - i != 10 ? "  " : " ") << 10 - i << black bold;
 
             for (int j = 0; j < 10; ++j) {
                 char piece =
-                    this->getPieceCharacter(this->positions.at((i * 10) + j));
+                    this->getPieceCharacter(this->positions[(i * 10) + j]);
 
-                cout << " | \033[1m";
+                cout << " | " bold;
 
-                if (piece == 'r')
+                if (piece == pieces[2])
                     cout << red;
                 else
-                    cout << reset;
+                    cout << white;
 
                 cout << piece << black bold;
+                // cout << this->positions[(i * 10) + j] << black bold;
 
                 // cout << "\033[0m";
             }
@@ -76,11 +81,10 @@ class Board {
         }
         cout << "    +---+---+---+---+---+---+---+---+---+---+\n";
 
-        cout << "   \033[0m";
+        cout << "   " white;
         for (int i = 0; i < 10; ++i) cout << "   " << char(i + 'A');
-
-        cout << "\n\n Turno de las (" bold
-             << (playerMoving == 1 ? (white "b") : (red "r")) << reset ")\n";
+        cout << "\n\n Turno de las (" bold << (playerMoving == 2 ? red : white)
+             << this->getPieceCharacter(playerMoving) << reset ")\n";
 
         if (warnings != "") {
             cout << "\nMensaje: " << warnings << '\n';
@@ -90,6 +94,7 @@ class Board {
 
     void moveAPiece(string mov) {
         mov = toLower(mov);
+
         int selectedDirection, originPosition, destinationPosition;
         int enemyPlayer;
 
@@ -145,11 +150,8 @@ class Board {
                     numberOfWhitePieces--;
                 else
                     numberOfRedPieces--;
-            } else {
-                warnings =
-                    "No puedes capturar. Hay una pieza hacia donde te quieres "
-                    "mover";
-            }
+            } else
+                warnings = "No puedes capturar. Hay una pieza detras";
             return;
         }
 
@@ -159,7 +161,7 @@ class Board {
     }
 
     int someoneWin() {
-        if (numberOfRedPieces == 0) return -1;   // gana blancas
+        if (numberOfRedPieces == 0) return -1;   // ganan blancas
         if (numberOfWhitePieces == 0) return 1;  // ganan rojas
 
         return 0;
@@ -169,8 +171,12 @@ class Board {
     bool isAValidMove(string mov) {
         mov = toLower(mov);
 
-        if ((mov[0] < 'a' || mov[0] > 'j') || (mov[2] != 'l' && mov[2] != 'r'))
-            return false;  // no es un caracter
+        char leftSign = 'l';
+        char rightSign = 'r';
+
+        if ((mov[0] < 'a' || mov[0] > 'j') ||
+            (mov[2] != leftSign && mov[2] != rightSign))
+            return false;  // no es un caracter dentro de los limites
 
         if (mov[1] < '1' || mov[1] > '9') return false;
 
@@ -183,9 +189,12 @@ class Board {
     }
 
     int getPieceCode(char character) {
-        for (int i = 0; i < pieces.size(); ++i)
-            if (character == pieces[i]) return i + 1;
-        return -1;
+        if (character == 'b')
+            return 1;
+        else if (character == 'r')
+            return 2;
+        else
+            return -1;
     }
 
     void initBoard(string FENCode) {
@@ -202,8 +211,7 @@ class Board {
             else if (FENChar >= '1' && FENChar <= '9')
                 column += FENChar - '0';
             else {
-                positions[(row * 10) + column] =
-                    this->getPieceCode(FENChar) - 1;
+                positions[(row * 10) + column] = this->getPieceCode(FENChar);
 
                 if (this->getPieceCode(FENChar) == 2)
                     numberOfRedPieces++;
