@@ -31,6 +31,8 @@ class Board {
     int numberOfWhitePieces;
     vector<int> positions;
     vector<char> pieces;
+    char leftSign = 'l';
+    char rightSign = 'r';
 
     struct {  // this is for red pieces
         int lef = -9;
@@ -40,11 +42,15 @@ class Board {
    public:
     Board() {
         warnings = "";
-        playerMoving = 2;
+
+        playerMoving = 2;  // 2 = rojos
         numberOfRedPieces = 0;
         numberOfWhitePieces = 0;
         positions = vector<int>(100);
-        pieces = {' ', 'M', 'X'};
+        pieces = {' ', 'p', 'X'};
+
+        leftSign = 'l';
+        rightSign = 'r';
 
         // this->initBoard("rnbqkbnr/pppppppp/8/8/8/8/PPPPPPPP/RNBQKBNR");
         this->initBoard(
@@ -92,28 +98,31 @@ class Board {
         }
     }
 
-    void moveAPiece(string mov) {
-        mov = toLower(mov);
-
+    void moveAPiece() {
+        string mov;
         int selectedDirection, originPosition, destinationPosition;
         int enemyPlayer;
+
+        cout << "\n Jugada: ";
+        cin >> mov;
+        mov = toLower(mov);
 
         while (!this->isAValidMove(mov)) {
             warnings = "Debes introducir una jugada correcta";
             cls;
             this->print();
 
-            cout << "\nJugada: ";
+            cout << "\n Jugada: ";
             cin >> mov;
             mov = toLower(mov);
         }
 
         if (playerMoving == 1) {
             selectedDirection =
-                (mov[2] == 'l') ? -directions.lef : -directions.righ;
+                (mov[2] == leftSign) ? -directions.lef : -directions.righ;
         } else {
             selectedDirection =
-                (mov[2] == 'l') ? directions.righ : directions.lef;
+                (mov[2] == leftSign) ? directions.righ : directions.lef;
         }
 
         originPosition = ((mov[0] - 'a')) + (9 - (mov[1] - '1')) * 10;
@@ -121,7 +130,7 @@ class Board {
 
         enemyPlayer = (playerMoving == 1) ? 2 : 1;
 
-        cout << originPosition << " <- pos\n";
+        // cout << originPosition << " <- pos\n";
 
         if (positions[originPosition] == 0) {
             warnings = "Epa vale, aqui no hay ninguna pieza";
@@ -171,14 +180,13 @@ class Board {
     bool isAValidMove(string mov) {
         mov = toLower(mov);
 
-        char leftSign = 'l';
-        char rightSign = 'r';
-
-        if ((mov[0] < 'a' || mov[0] > 'j') ||
+        if ((mov[0] < 'a' || mov[0] > 'j') || (mov[1] < '1' || mov[1] > '9') ||
             (mov[2] != leftSign && mov[2] != rightSign))
             return false;  // no es un caracter dentro de los limites
 
-        if (mov[1] < '1' || mov[1] > '9') return false;
+        if ((mov[0] == 'a' && mov[2] == leftSign) ||
+            (mov[0] == 'j' && mov[2] == rightSign))
+            return false;  // no puedes salirte del tablero lateralmente
 
         return true;
     }
@@ -233,25 +241,24 @@ class Board {
 
 int main(int argc, char *argv[]) {
     Board board;
-    string mov;
 
     cls;
     board.print();
+
     do {
-        cout << "\nJugada: ";
-        cin >> mov;
-        board.moveAPiece(mov);
+        board.moveAPiece();
         cls;
         board.print();
-    } while (!board.someoneWin());
+    } while (!board.someoneWin());  // Main loop
 
     cout << '\n';
 
     cls;
+    board.print();
     if (board.someoneWin() == 1) {
-        cout << "Ganaron las rojas nojodaaaaa";
+        cout << "\nGanaron las rojas nojodaaaaa";
     } else
-        cout << "Ganaron las blancas nojodaaaaa";
+        cout << "\nGanaron las blancas nojodaaaaa";
 
     cout << '\n';
     return 0;
